@@ -5,6 +5,7 @@ django-filter==1.0.4
 django-material==1.0.0
 djangorestframework==3.6.3
 gunicorn==19.6.0
+ipython==6.2.1
 psycopg2==2.7.3.1
 python-env==1.0.0
 whitenoise==3.2
