@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
 
-import Footer from "./footer";
 import Header from "./header";
 
 
@@ -13,7 +12,6 @@ class Layout extends Component {
             <div className="wrapper">
                 <Header/>
                 {this.props.children}
-                <Footer/>
             </div>
         );
     }
