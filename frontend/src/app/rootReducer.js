@@ -1,7 +1,7 @@
 import {combineReducers} from "redux";
 
 import alerts from "app/reducers/alerts";
-import users from "app/users/reducers";
+import users from "app/apps/users/reducers";
 
 
 export default combineReducers({

@@ -4,8 +4,8 @@ import {createSelector} from "reselect";
 
 import actions from "app/actions/collection";
 import Container from "app/components/list/Container";
-import CreateForm from "app/users/components/CreateForm";
-import QueryForm from "app/users/components/QueryForm";
+import CreateForm from "app/apps/users/components/CreateForm";
+import QueryForm from "app/apps/users/components/QueryForm";
 
 
 const selector = createSelector(
