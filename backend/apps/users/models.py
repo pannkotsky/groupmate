@@ -91,3 +91,4 @@ class EmailUser(AbstractBaseUser, PermissionsMixin):
             first_name=self.first_name,
             last_name=self.last_name,
         )
+    get_full_name.short_description = 'Full name'
