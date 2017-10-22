@@ -1,5 +1,11 @@
 import React from "react";
-import {Box} from "adminlte";
+import {
+    Body,
+    Header,
+    Title,
+    Tools,
+    Wrapper
+} from "./AdminBox";
 
 import LinkedListGroup from "app/components/LinkedListGroup";
 import Pagination from "app/components/Pagination";
@@ -12,14 +18,14 @@ class MasterBox extends React.Component {
         const {collection, CreateForm, QueryForm} = this.props;
 
         return (
-            <Box.Wrapper>
-                <Box.Header>
-                    <Box.Title>{collection.title}</Box.Title>
-                    <Box.Tools>
+            <Wrapper>
+                <Header>
+                    <Title>{collection.title}</Title>
+                    <Tools>
                         <SearchBox {...this.props}/>
-                    </Box.Tools>
-                </Box.Header>
-                <Box.Body>
+                    </Tools>
+                </Header>
+                <Body>
                     <LinkedListGroup {...this.props}/>
                     <div className="text-center">
                         <CreateForm {...this.props}/>
@@ -27,8 +33,8 @@ class MasterBox extends React.Component {
                         <QueryForm {...this.props}/>
                     </div>
                     <Pagination {...this.props}/>
-                </Box.Body>
-            </Box.Wrapper>
+                </Body>
+            </Wrapper>
         );
     }
 }
