@@ -1,7 +1,7 @@
 from .common import *
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 't9uk7z8vrm@43978@*v42dvr**9+qe&+!s!51u!777#o66lbx4'
+SECRET_KEY = dotenv.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
