@@ -167,3 +167,42 @@ REST_FRAMEWORK = {
 }
 
 AUTH_USER_MODEL = 'users.EmailUser'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'simple': {
+            'format': '%(asctime)s\t%(levelname)s\t%(name)s, line %(lineno)s\t'
+                      '%(message)s',
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',
+        },
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': '/logs/django-debug.log',
+            'formatter': 'simple',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file', 'console'],
+            'level': 'INFO',
+        },
+        'django.request': {
+            'handlers': ['file', 'console'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'groupmate': {
+            'handlers': ['file', 'console'],
+            'level': 'DEBUG',
+        },
+    },
+}
