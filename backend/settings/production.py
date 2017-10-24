@@ -16,5 +16,6 @@ STATICFILES_DIRS.append(
 )
 
 ALLOWED_HOSTS = [
-    '*'
+    '127.0.0.1',
+    'https://groupmate.herokuapp.com'
 ]
