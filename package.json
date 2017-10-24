@@ -4,10 +4,10 @@
   "description": "Groupmate",
   "scripts": {
     "clean": "rimraf dist",
-    "build:webpack": "NODE_ENV=production webpack --config webpack.config.prod.js",
+    "build:webpack": "NODE_ENV=production webpack --config frontend/webpack.config.prod.js",
     "build": "npm run clean && npm run build:webpack",
-    "start": "webpack -c --progress -w --config webpack.config.dev.js",
-    "lint": "eslint src/"
+    "start": "webpack -c --progress -w --config frontend/webpack.config.dev.js",
+    "lint": "eslint frontend/src/"
   },
   "author": "Valerii Kovalchuk",
   "repository" : {

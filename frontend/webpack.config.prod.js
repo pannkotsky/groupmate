@@ -6,7 +6,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
     devtool: "source-map",
     entry: {
-        app: "./src/index",
+        app: "./frontend/src/index",
         vendor: [
             "classnames", "history", "immutable", "lodash", "moment",
             "nprogress", "react", "react-bootstrap", "react-dom", "react-redux",
@@ -15,7 +15,7 @@ module.exports = {
         ],
     },
     resolve: {
-        modulesDirectories: ["src", "node_modules"]
+        modulesDirectories: ["frontend/src", "node_modules"]
     },
     output: {
         path: path.join(__dirname, "dist"),
