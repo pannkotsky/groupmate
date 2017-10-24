@@ -2,6 +2,6 @@
 
 pushd frontend
 npm run build
-pwd
+popd
 python manage.py collectstatic --noinput
 python manage.py migrate --noinput
