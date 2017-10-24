@@ -12,7 +12,7 @@ db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
 STATICFILES_DIRS.append(
-    os.path.join(PROJECT_ROOT, 'frontend', 'build'),
+    os.path.join(PROJECT_ROOT, 'frontend', 'dist'),
 )
 
 ALLOWED_HOSTS = [
