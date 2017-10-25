@@ -11,4 +11,3 @@ backend/settings/local.py
 node_modules
 frontend/build
 *.log
-frontend/dist
