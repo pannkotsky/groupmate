@@ -24,7 +24,7 @@
                 logout: '{% url "logout" %}',
                 change_password: '{% url "change_password" %}',
                 staticRoot: '{% static "/" %}',
-                users: '{% url "emailuser-list" %}'
+                users: '/api/users/'
             },
             user: {
                 username: "{{ request.user.username }}",

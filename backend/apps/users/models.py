@@ -1,5 +1,3 @@
-from __future__ import unicode_literals
-
 from django.contrib.auth.models import (AbstractBaseUser, PermissionsMixin,
                                         BaseUserManager)
 from django.db import models
@@ -88,8 +86,8 @@ class EmailUser(AbstractBaseUser, PermissionsMixin):
             ('view_emailuser', _('Can view email users')),
         )
 
-    def __unicode__(self):
-        return self.email
+    def __str__(self):
+        return self.get_full_name()
 
     def get_short_name(self):
         return '{first_name}'.format(
