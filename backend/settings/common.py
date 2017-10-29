@@ -48,7 +48,8 @@ INSTALLED_APPS = [
 
 LOCAL_APPS = [
     "common",
-    "users"
+    "forum",
+    "users",
 ]
 
 INSTALLED_APPS += LOCAL_APPS
