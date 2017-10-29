@@ -9,7 +9,7 @@ class PostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Post
-        fields = ('text', 'topic', 'author', 'created', 'modified')
+        fields = ('id', 'text', 'topic', 'author', 'created', 'modified')
 
 
 class TopicSerializer(serializers.ModelSerializer):
@@ -19,4 +19,4 @@ class TopicSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Topic
-        fields = ('name', 'author', 'posts', 'created', 'modified')
+        fields = ('id', 'name', 'author', 'posts', 'created', 'modified')

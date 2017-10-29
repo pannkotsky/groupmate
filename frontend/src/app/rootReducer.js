@@ -1,10 +1,8 @@
-import {combineReducers} from "redux";
+import {combineReducers} from "redux-immutablejs";
 
-import alerts from "app/reducers/alerts";
-import users from "app/apps/users/reducers";
+import forum from "app/apps/forum/reducers";
 
 
 export default combineReducers({
-    alerts,
-    users
+    forum
 });
