@@ -18,7 +18,7 @@ module.exports = {
         modulesDirectories: ["frontend/src", "node_modules"]
     },
     output: {
-        path: path.join(__dirname, "build"),
+        path: path.join(__dirname, "dist"),
         filename: "js/bundle.js",
     },
     plugins: [

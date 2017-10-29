@@ -22,6 +22,7 @@
             csrf: "{{ csrf_token }}",
             urls: {
                 logout: '{% url "logout" %}',
+                change_password: '{% url "change_password" %}',
                 staticRoot: '{% static "/" %}',
                 users: '{% url "emailuser-list" %}'
             },

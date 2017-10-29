@@ -18,6 +18,11 @@ class Header extends Component {
                                   <a href="#">{window.django.user.full_name}</a>
                               </li>
                               <li>
+                                  <a href={window.django.urls.change_password}>
+                                      Change password
+                                  </a>
+                              </li>
+                              <li>
                                   <a href={window.django.urls.logout}>
                                       <span className="glyphicon glyphicon-log-out"/> Log out
                                   </a>
