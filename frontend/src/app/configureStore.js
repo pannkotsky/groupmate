@@ -1,5 +1,4 @@
 import createLogger from "redux-logger";
-import thunkMiddleware from "redux-thunk";
 import createSagaMiddleware from "redux-saga";
 import {createStore, applyMiddleware} from "redux";
 
@@ -18,7 +17,6 @@ export default (initialState) => {
         rootReducer,
         initialState,
         applyMiddleware(
-            thunkMiddleware,
             sagaMiddleware,
             loggerMiddleware
         )
