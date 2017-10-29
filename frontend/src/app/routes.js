@@ -2,19 +2,22 @@ import React from "react";
 import {IndexRedirect, Route} from "react-router";
 
 import RouteNotFound from "app/components/RouteNotFound";
-import Forum from "app/apps/forum/components/Forum";
+import Topics from "app/apps/forum/components/Topics";
+import Posts from "app/apps/forum/components/Posts";
 import Layout from "app/layouts";
 
 
 export const urls = {
-    forum: "/forum"
+    topics: "/topics",
+    posts: "/topics/:topicId/posts"
 };
 
 
 const routes = (
     <Route path="/" component={Layout}>
-        <IndexRedirect to={urls.forum}/>
-        <Route path={urls.forum} component={Forum}/>
+        <IndexRedirect to={urls.topics}/>
+        <Route path={urls.topics} component={Topics}/>
+        <Route path={urls.posts} component={Posts}/>
         <Route path="*" component={RouteNotFound}/>
     </Route>
 );

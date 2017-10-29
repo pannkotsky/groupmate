@@ -1,10 +1,15 @@
-import {fromJS, List} from "immutable";
+import {fromJS} from "immutable";
 
 import * as constants from "./constants";
 
 
 const defaultState = fromJS({
-    topics: [],
+    topicsData: {
+        results: [],
+        count: 0,
+        previous: null,
+        next: null
+    },
     topicsPending: false,
     topicsError: null
 });
@@ -15,19 +20,19 @@ export default function(state = defaultState, action) {
         case constants.TOPICS_RETRIEVE_PENDING:
             return state.merge({
                 "topicsPending": true,
-                "topics": List(),
+                "topicsData": defaultState.get("topicsData"),
                 "topicsError": null
             });
         case constants.TOPICS_RETRIEVE_SUCCESS:
             return state.merge({
                 "topicsPending": false,
-                "topics": action.payload.data.results,
+                "topicsData": action.payload.data,
                 "topicsError": null
             });
         case constants.TOPICS_RETRIEVE_ERROR:
             return state.merge({
                 "topicsPending": false,
-                "topics": List(),
+                "topicsData": defaultState.get("topicsData"),
                 "topicsError": action.payload.error
             });
         default:
