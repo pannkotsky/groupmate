@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 ]
 
 LOCAL_APPS = [
+    "common",
     "users"
 ]
 
@@ -168,6 +169,9 @@ REST_FRAMEWORK = {
 }
 
 AUTH_USER_MODEL = 'users.EmailUser'
+AUTHENTICATION_BACKENDS = [
+    'users.login_backend.EmailOrPhoneModelBackend',
+]
 
 LOGGING = {
     'version': 1,

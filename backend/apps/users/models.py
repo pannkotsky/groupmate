@@ -4,6 +4,9 @@ from django.contrib.auth.models import (AbstractBaseUser, PermissionsMixin,
                                         BaseUserManager)
 from django.db import models
 from django.utils import timezone
+from django.utils.translation import ugettext_lazy as _
+
+from common.fields import PhoneField
 
 
 class EmailUserManager(BaseUserManager):
@@ -12,7 +15,7 @@ class EmailUserManager(BaseUserManager):
         now = timezone.now()
 
         if not email:
-            raise ValueError('The given email must be set')
+            raise ValueError(_('The given email must be set'))
 
         email = self.normalize_email(email)
         is_active = extra_fields.pop("is_active", True)
@@ -60,7 +63,14 @@ class EmailUser(AbstractBaseUser, PermissionsMixin):
         max_length=254,
         unique=True,
         error_messages={
-            'unique': 'That email address is already taken.'
+            'unique': _('That email address is already taken.')
+        }
+    )
+    phone = PhoneField(
+        unique=True,
+        null=True,
+        error_messages={
+            'unique': _('That phone number is already taken.')
         }
     )
 
@@ -75,7 +85,7 @@ class EmailUser(AbstractBaseUser, PermissionsMixin):
 
     class Meta:
         permissions = (
-            ('view_emailuser', 'Can view email users'),
+            ('view_emailuser', _('Can view email users')),
         )
 
     def __unicode__(self):
@@ -91,4 +101,4 @@ class EmailUser(AbstractBaseUser, PermissionsMixin):
             first_name=self.first_name,
             last_name=self.last_name,
         )
-    get_full_name.short_description = 'Full name'
+    get_full_name.short_description = _('Full name')
