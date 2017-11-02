@@ -10,8 +10,7 @@ module.exports = {
         vendor: [
             "classnames", "history", "immutable", "lodash", "moment",
             "nprogress", "react", "react-bootstrap", "react-dom", "react-redux",
-            "react-router", "redux", "redux-logger", "redux-thunk",
-            "reselect", "superagent"
+            "react-router", "redux", "redux-logger", "reselect"
         ],
     },
     resolve: {
