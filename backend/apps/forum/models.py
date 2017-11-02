@@ -20,6 +20,9 @@ class Topic(TimeStampedModel):
             return posts[0]
         return None
 
+    def posts_count(self):
+        return self.posts.count()
+
     def __str__(self):
         return self.name
 

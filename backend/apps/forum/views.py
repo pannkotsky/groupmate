@@ -1,13 +1,19 @@
 from rest_framework import viewsets
 
 from .models import Topic, Post
-from .serializers import TopicSerializer, PostSerializer
+from .serializers import TopicSerializer, TopicDetailSerializer, PostSerializer
 
 
 class TopicViewSet(viewsets.ModelViewSet):
-    serializer_class = TopicSerializer
+    serializers = {
+        'retrieve': TopicDetailSerializer,
+        'default': TopicSerializer
+    }
     queryset = Topic.objects.order_by('-created')
     filter_fields = ('author',)
+
+    def get_serializer_class(self):
+        return self.serializers.get(self.action, self.serializers['default'])
 
 
 class PostViewSet(viewsets.ModelViewSet):

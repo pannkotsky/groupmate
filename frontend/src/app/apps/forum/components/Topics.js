@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {connect} from "react-redux";
 import pluralize from "pluralize";
 import {Link} from "react-router";
+import moment from "moment";
 
 import {retrieveTopics} from "../actions";
 import {urls} from "app/routes";
@@ -33,8 +34,14 @@ class Topics extends Component {
                                         <Link to={urls.posts.replace(":topicId", topic.id)}>{topic.name}</Link>
                                     </div>
                                     <div className="topics--list--item--posts-count">
-                                        {topic.posts.length} {pluralize("post", topic.posts.length)}
+                                        {topic.posts_count} {pluralize("post", topic.posts_count)}
                                     </div>
+                                    {topic.latest_post ?
+                                    <div className="topics--list--item--latest-post">
+                                        <div>Latest post:</div>
+                                        <div>{moment(topic.latest_post.created).format("D MMM YYYY")}</div>
+                                        <div>{topic.latest_post.author_info.get_full_name}</div>
+                                    </div> : null}
                                 </li>
                             );
                         })}
