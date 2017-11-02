@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
-import {FormGroup, ControlLabel, FormControl, Button} from "react-bootstrap";
+import {FormGroup, ControlLabel, FormControl} from "react-bootstrap";
 
 
 class CommentForm extends Component {
@@ -30,7 +30,7 @@ class CommentForm extends Component {
                     {this.props.label && <ControlLabel>{this.props.label}</ControlLabel>}
                     <FormControl componentClass="textarea" ref="textArea" placeholder={this.props.placeholder} required/>
                 </FormGroup>
-                <Button type="submit">{this.props.buttonText}</Button>
+                <button type="submit">{this.props.buttonText}</button>
             </form>
         );
     }
