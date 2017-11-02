@@ -13954,6 +13954,7 @@ ul {
     margin: 100px 50px 20px 50px;
     padding: 16px;
     background-color: #ffffff;
+    box-shadow: 0 1px 53px 15px rgba(0, 1, 2, 0.3);
 }
 @font-face {
   font-family: GothamPro;
@@ -13968,13 +13969,16 @@ ul {
   font-size: 36px;
   font-weight: 500;
   color: #bcbcbc;
+  display: flex;
+  justify-content: space-between;
 }
 .section-header h1 {
   margin-left: 15px;
 }
 .section-header--info {
-  float: right;
   color: #000000;
+  line-height: 80px;
+  margin-right: 20px;
 }
 .section-list {
   margin-top: 50px;
@@ -14008,6 +14012,9 @@ ul {
   font-size: 18px;
   font-weight: 500;
 }
+.posts--list {
+  margin-top: 100px;
+}
 .posts--list--item {
   margin: 20px;
   padding: 20px;
@@ -14022,17 +14029,21 @@ ul {
   margin: 20px;
 }
 .posts--form textarea.form-control {
-  height: 200px;
+  height: 100px;
   font-size: 16px;
   color: #343434;
   padding: 20px;
 }
 .posts--form button {
-  height: 75px;
+  height: 40px;
+  line-height: 35px;
+  width: 150px;
   background-color: #040608;
   border: solid 2px #040608;
-  font-size: 30px;
+  font-size: 18px;
   color: #ffffff;
+  text-transform: uppercase;
+  float: right;
 }
 /* Make clicks pass-through */
 #nprogress {

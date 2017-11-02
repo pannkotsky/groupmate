@@ -20,11 +20,11 @@ class Posts extends Component {
         return (
             <div className="posts content-container">
                 <div className="section-header posts--header">
-                    <div className="section-header--info">
-                        {topicData.posts_count} {pluralize("post", topicData.posts_count)}
-                    </div>
                     <div>
                         <h1 className="section-header--title">{topicData.name}</h1>
+                    </div>
+                    <div className="section-header--info">
+                        {topicData.posts_count} {pluralize("post", topicData.posts_count)}
                     </div>
                 </div>
 

@@ -18,11 +18,11 @@ class Topics extends Component {
         return (
             <div className="topics content-container">
                 <div className="section-header topics--header">
-                    <div className="section-header--info">
-                        {topicsData.count} {pluralize("topic", topicsData.count)}
-                    </div>
                     <div>
                         <h1 className="section-header--title">Groupmate feed</h1>
+                    </div>
+                    <div className="section-header--info">
+                        {topicsData.count} {pluralize("topic", topicsData.count)}
                     </div>
                 </div>
 
