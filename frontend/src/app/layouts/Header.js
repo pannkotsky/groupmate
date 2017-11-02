@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {Link} from "react-router";
 
 import {urls} from "app/routes";
+import stylesheets from "app/stylesheets/header.less"; //eslint-disable-line no-unused-vars
 
 
 class Header extends Component {
@@ -12,7 +13,9 @@ class Header extends Component {
                 <nav className="navbar navbar-default">
                     <div className="container-fluid">
                         <div className="navbar-header">
-                            <Link className="navbar-brand" to={urls.topics}>Groupmate</Link>
+                            <Link className="navbar-brand" to={urls.topics}>
+                                <img src={window.django.urls.staticRoot + "logo.png"}/>
+                            </Link>
                         </div>
                         <ul className="nav navbar-nav navbar-right">
                               <li>
@@ -25,7 +28,7 @@ class Header extends Component {
                               </li>
                               <li>
                                   <a href={window.django.urls.logout}>
-                                      <span className="glyphicon glyphicon-log-out"/> Log out
+                                      Logout
                                   </a>
                               </li>
                         </ul>
