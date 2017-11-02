@@ -7,6 +7,15 @@ export function retrieveTopics() {
     };
 }
 
+export function retrieveTopicDetails(topicId) {
+    return {
+        type: constants.TOPIC_DETAILS_PENDING,
+        payload: {
+            topicId
+        }
+    };
+}
+
 export function retrievePosts(topicId) {
     return {
         type: constants.POSTS_RETRIEVE_PENDING,
@@ -16,11 +25,13 @@ export function retrievePosts(topicId) {
     };
 }
 
-export function addPost(topicId) {
+export function addPost(author, topic, text) {
     return {
         type: constants.POST_CREATE_PENDING,
         payload: {
-            topicId
+            author,
+            topic,
+            text
         }
     };
 }

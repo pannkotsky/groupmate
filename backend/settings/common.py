@@ -214,5 +214,3 @@ LOGGING = {
         },
     },
 }
-
-CSRF_COOKIE_NAME = "XSRF-TOKEN"

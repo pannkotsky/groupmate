@@ -23,13 +23,3 @@ class TopicSerializer(serializers.ModelSerializer):
     class Meta:
         model = Topic
         fields = ('id', 'name', 'author', 'created', 'modified', 'latest_post', 'posts_count')
-
-
-class TopicDetailSerializer(serializers.ModelSerializer):
-    posts = PostSerializer(read_only=True, many=True)
-    created = serializers.DateTimeField(read_only=True, allow_null=True)
-    modified = serializers.DateTimeField(read_only=True, allow_null=True)
-
-    class Meta:
-        model = Topic
-        fields = ('id', 'name', 'author', 'posts', 'created', 'modified')

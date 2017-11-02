@@ -14,19 +14,19 @@ class Topics extends Component {
     }
 
     render() {
-        const topicsData = this.props.forum.topicsData;
+        const topicsData = this.props.topics.data;
         return (
             <div className="topics">
-                <div className="topics--header">
-                    <h1 className="topics--header--title">Groupmate feed</h1>
-                    <span className="topics--header-info">
+                <div className="section-header topics--header">
+                    <h1 className="section-header--title">Groupmate feed</h1>
+                    <span className="section-header--info">
                         {topicsData.count} {pluralize("topic", topicsData.count)}
                     </span>
                 </div>
 
-                {this.props.forum.topicsPending ?
+                {this.props.topics.pending ?
                     <span>Loading...</span> :
-                    <ul className="topics--list">
+                    <ul className="section-list topics--list">
                         {topicsData.results.map((topic) => {
                             return (
                                 <li key={topic.id} className="topics--list--item">
@@ -55,7 +55,7 @@ class Topics extends Component {
 
 function mapStateToProps(state) {
     return {
-        forum: state.get("forum").toJS()
+        topics: state.getIn(["forum", "topics"]).toJS()
     };
 }
 
