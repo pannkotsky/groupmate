@@ -33,7 +33,7 @@ class Posts extends Component {
                             return (
                                 <li key={post.id} className="posts--list--item">
                                     <div className="posts--list--item--text">{post.text}</div>
-                                    <div>{moment(post.created).format("D MMM YYYY")}</div>
+                                    <div>{moment(post.created).format("D MMM YYYY HH:mm")}</div>
                                     {post.author_info ? <div>{post.author_info.get_full_name}</div> : null}
                                 </li>
                             );

@@ -39,7 +39,7 @@ class Topics extends Component {
                                     {topic.latest_post ?
                                     <div className="topics--list--item--latest-post">
                                         <div>Latest post:</div>
-                                        <div>{moment(topic.latest_post.created).format("D MMM YYYY")}</div>
+                                        <div>{moment(topic.latest_post.created).format("D MMM YYYY HH:mm")}</div>
                                         <div>{topic.latest_post.author_info.get_full_name}</div>
                                     </div> : null}
                                 </li>
