@@ -44,4 +44,29 @@
 
 body {
     font-family: GothamPro, Arial, sans-serif;
+    background-image: url("../img/background.png");
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: GothamPro, Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+a {
+    color: #000000;
+}
+
+a:hover {
+    color: #000000;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.content-container {
+    margin: 100px 50px 20px 50px;
+    padding: 16px;
+    background-color: #ffffff;
 }
