@@ -51,6 +51,7 @@
     "react-dom": "0.14.9",
     "react-redux": "4.4.1",
     "react-router": "2.6.1",
+    "react-spin": "0.6.2",
     "redux": "3.3.1",
     "redux-immutablejs": "0.0.8",
     "redux-logger": "2.6.1",

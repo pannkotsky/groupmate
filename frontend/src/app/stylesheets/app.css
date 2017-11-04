@@ -71,3 +71,8 @@ ul {
     background-color: #ffffff;
     box-shadow: 0 1px 53px 15px rgba(0, 1, 2, 0.3);
 }
+
+.spinner-wrapper {
+    position: relative;
+    height: 100px;
+}

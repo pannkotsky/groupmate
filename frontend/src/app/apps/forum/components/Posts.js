@@ -3,6 +3,7 @@ import {connect} from "react-redux";
 import pluralize from "pluralize";
 import moment from "moment";
 import autoBind from "react-autobind";
+import Spinner from 'react-spin';
 
 import {retrieveTopicDetails, retrievePosts, addPost, resetPosts, resetTopicDetails} from "../actions";
 import Form from "app/components/Form";
@@ -66,13 +67,16 @@ class Posts extends Component {
                             </li>
                         );
                     })}
-                    {this.props.posts.pending && <span>Loading...</span>}
-                    {postsData.next && !this.props.posts.pending ?
-                        <div className="section--load-more" onClick={this.retrievePosts}>
-                            Load more...
-                        </div> :
-                        null}
                 </ul>
+                {this.props.posts.pending &&
+                <div className="spinner-wrapper">
+                    <Spinner/>
+                </div>}
+                {postsData.next && !this.props.posts.pending ?
+                    <div className="section--load-more" onClick={this.retrievePosts}>
+                        Load more...
+                    </div> :
+                    null}
             </div>
         );
     }
