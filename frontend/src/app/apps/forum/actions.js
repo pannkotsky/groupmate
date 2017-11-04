@@ -7,6 +7,12 @@ export function retrieveTopics() {
     };
 }
 
+export function resetTopics() {
+    return {
+        type: constants.TOPICS_RESET
+    };
+}
+
 export function retrieveTopicDetails(topicId) {
     return {
         type: constants.TOPIC_DETAILS_PENDING,
@@ -16,12 +22,24 @@ export function retrieveTopicDetails(topicId) {
     };
 }
 
+export function resetTopicDetails() {
+    return {
+        type: constants.TOPIC_DETAILS_RESET
+    };
+}
+
 export function retrievePosts(topicId) {
     return {
         type: constants.POSTS_RETRIEVE_PENDING,
         payload: {
             topicId
         }
+    };
+}
+
+export function resetPosts() {
+    return {
+        type: constants.POSTS_RESET
     };
 }
 

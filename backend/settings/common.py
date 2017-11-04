@@ -163,7 +163,7 @@ REST_FRAMEWORK = {
         "rest_framework.authentication.SessionAuthentication",
     ),
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
-    "PAGE_SIZE": 20,
+    "PAGE_SIZE": 10,
     "DEFAULT_FILTER_BACKENDS": (
         "rest_framework.filters.SearchFilter",
         "rest_framework.filters.DjangoFilterBackend",
