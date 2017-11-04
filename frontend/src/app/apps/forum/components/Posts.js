@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import pluralize from "pluralize";
 import moment from "moment";
 import autoBind from "react-autobind";
-import Spinner from 'react-spin';
+import Spinner from "react-spin";
 
 import {retrieveTopicDetails, retrievePosts, addPost, resetPosts, resetTopicDetails} from "../actions";
 import Form from "app/components/Form";

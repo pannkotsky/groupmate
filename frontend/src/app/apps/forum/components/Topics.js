@@ -3,6 +3,7 @@ import {connect} from "react-redux";
 import pluralize from "pluralize";
 import {Link} from "react-router";
 import moment from "moment";
+import Spinner from "react-spin";
 
 import {retrieveTopics, resetTopics} from "../actions";
 import {urls} from "app/routes";
@@ -30,35 +31,36 @@ class Topics extends Component {
                     </div>
                 </div>
 
-                {this.props.topics.pending ?
-                    <span>Loading...</span> :
-                    <ul className="section-list topics--list">
-                        {topicsData.results.map((topic) => {
-                            return (
-                                <li key={topic.id} className="section-list--item">
-                                    <Link to={urls.posts.replace(":topicId", topic.id)}>
-                                        <div className="section-list--item--top-row">
-                                            <div className="topics--list--item--name">
-                                                <h4>{topic.name}</h4>
-                                            </div>
-                                            <div className="topics--list--item--posts-count">
-                                                {topic.posts_count} {pluralize("post", topic.posts_count)}
-                                            </div>
+                <ul className="section-list topics--list">
+                    {topicsData.results.map((topic) => {
+                        return (
+                            <li key={topic.id} className="section-list--item">
+                                <Link to={urls.posts.replace(":topicId", topic.id)}>
+                                    <div className="section-list--item--top-row">
+                                        <div className="topics--list--item--name">
+                                            <h4>{topic.name}</h4>
                                         </div>
-                                        {topic.latest_post ?
-                                        <div className="section-list--item--post-info">
-                                            <div>Latest post:</div>
-                                            <div>{moment(topic.latest_post.created).format("D MMM YYYY HH:mm")}</div>
-                                            <div className="topics--list--item--latest-post--author">
-                                                {topic.latest_post.author_info.get_full_name}
-                                            </div>
-                                        </div> : null}
-                                    </Link>
-                                </li>
-                            );
-                        })}
-                    </ul>
-                }
+                                        <div className="topics--list--item--posts-count">
+                                            {topic.posts_count} {pluralize("post", topic.posts_count)}
+                                        </div>
+                                    </div>
+                                    {topic.latest_post ?
+                                    <div className="section-list--item--post-info">
+                                        <div>Latest post:</div>
+                                        <div>{moment(topic.latest_post.created).format("D MMM YYYY HH:mm")}</div>
+                                        <div className="topics--list--item--latest-post--author">
+                                            {topic.latest_post.author_info.get_full_name}
+                                        </div>
+                                    </div> : null}
+                                </Link>
+                            </li>
+                        );
+                    })}
+                </ul>
+                {this.props.topics.pending &&
+                <div className="spinner-wrapper">
+                    <Spinner/>
+                </div>}
             </div>
         );
     }
