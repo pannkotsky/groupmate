@@ -24,7 +24,7 @@ class Posts extends Component {
                         <h1 className="section-header--title">{topicData.name}</h1>
                     </div>
                     <div className="section-header--info">
-                        {topicData.posts_count} {pluralize("post", topicData.posts_count)}
+                        {postsData.count} {pluralize("post", postsData.count)}
                     </div>
                 </div>
 

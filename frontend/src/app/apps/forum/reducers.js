@@ -65,7 +65,9 @@ function handleError(state, dataType, action) {
 
 function handleNewItem(state, dataType, action) {
     const newItems = state.getIn([dataType, "data", "results"]).unshift(fromJS(action.payload.data));
-    return state.setIn([dataType, "data", "results"], newItems);
+    const newCount = state.getIn([dataType, "data", "count"]) + 1;
+    return state.setIn([dataType, "data", "results"], newItems)
+        .setIn([dataType, "data", "count"], newCount);
 }
 
 
