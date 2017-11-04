@@ -13,7 +13,8 @@ DATABASES['default'].update(db_from_env)
 
 STATICFILES_DIRS += [
     os.path.join(PROJECT_ROOT, 'frontend', 'dist'),
-    os.path.join(PROJECT_ROOT, 'WebpageZPI-73', 'dist')
+    os.path.join(PROJECT_ROOT, 'WebpageZPI-73', 'dist'),
+    os.path.join(PROJECT_ROOT, 'WebpageZPI-73', 'src', 'components')
 ]
 
 ALLOWED_HOSTS = [

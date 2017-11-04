@@ -2,7 +2,7 @@
   <div id="app">
     <nav class="nav_bar">
       <h2 class="animated flipInX main_logo">ЗПI - зп 73</h2>
-      <a href="https://groupmate.herokuapp.com/">Вхід для студентів</a>
+      <a href="/app/">Вхід для студентів</a>
         <a class="animated flipInX" v-for="nav in navs" :key="nav.title" :href="`#${nav.id}`" v-smooth-scroll>{{ nav.title }}</a>
         <button class="nav_btn" @click="show = !show">=</button>
     </nav>
@@ -12,7 +12,7 @@
         <button class="nav_btn" @click="show = !show">=</button>
     </nav>
     </transition>
-    <header id="header" class='parallax-window' data-parallax="scroll" data-image-src="src\components\img\mtmfb.jpg">
+    <header id="header" class='parallax-window' data-parallax="scroll" data-image-src="static/img/mtmfb.jpg">
       <div class="head_info">
         <div class="head_info_bg">
           <div class="head_info_in">
@@ -30,7 +30,7 @@
 			</div>
 		</div>
     </header>
-    <section id="about_us" class='parallax-window_ab' data-parallax="scroll" data-image-src="src/components/img/ping_img.jpg">
+    <section id="about_us" class='parallax-window_ab' data-parallax="scroll" data-image-src="static/img/ping_img.jpg">
         <div class="container">
           <div class="row">
             <div class="col-sm-4"></div>
@@ -49,7 +49,7 @@
 		</div></a>
     </section>
     <section id="contacts" class="contacts">
-      <img src="src\components\img\contact_mail.jpg" alt="contact_mail_img">
+      <img src="static/img/contact_mail.jpg" alt="contact_mail_img">
           <div class="contact_info">
         <div class="contact_info_bg">
           <div class="contact_info_in">
@@ -70,12 +70,12 @@
     </section>
     <div class="scrolling">
 					<a href='#' id='Go_Top'>
-            <img src="src/components/img/1000px-Top_Arrow.svg.png" alt="Вгору">
+            <img src="static/img/1000px-Top_Arrow.svg.png" alt="Вгору">
               </a>
 				</div>
 
-    <section id="about_university" class='parallax-window_au' data-parallax="scroll" data-image-src="src/components/img/kpi-future.jpg">
-      <div class="true_kpi" v-show="showObj"><img src="src/components/img/oldkpi.jpg" alt="oldkpi"><p>Стародавнiй КПI</p><button class="to_fake_kpi" @click="showObj = !showObj">Вiдтворення сучасного КПI</button></div>
+    <section id="about_university" class='parallax-window_au' data-parallax="scroll" data-image-src="static/img/kpi-future.jpg">
+      <div class="true_kpi" v-show="showObj"><img src="static/img/oldkpi.jpg" alt="oldkpi"><p>Стародавнiй КПI</p><button class="to_fake_kpi" @click="showObj = !showObj">Вiдтворення сучасного КПI</button></div>
       <div class="container">
         <div class="row">
           <div class="col-sm-4"><p class='animated bounceInLeft fake_kpi'>Це сучасний КПI</p></div>
@@ -90,7 +90,7 @@
 			</div>
 		</div></a>
     </section>
-    <section id="donate" class='parallax-window_donate' data-parallax="scroll" data-image-src="src/components/img/ws_Cubes_1920x1080.jpg">
+    <section id="donate" class='parallax-window_donate' data-parallax="scroll" data-image-src="static/img/ws_Cubes_1920x1080.jpg">
       <div class="container">
         <div class="row">
           <div class="col-sm-6"><p class="predpodInfo">
@@ -107,7 +107,7 @@
         </div>
       </div>
     </section>
-    <footer class='parallax-window_f' data-parallax="scroll" data-image-src="src\components\img\mtmfb.jpg">
+    <footer class='parallax-window_f' data-parallax="scroll" data-image-src="static/img/mtmfb.jpg">
       <div class="container_foot">
         <span class="foot_info">@ЗПI - зп 73 - Всi права захищенi</span>
       </div>

@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import SmoothScroll from 'vue-smoothscroll'
+import SmoothScroll from '../dist/libs/vue-smoothscroll'
 
 
 new Vue({
@@ -9,23 +9,23 @@ new Vue({
 })
 
 $(document).ready(function(){
-	$('.parallax-window').parallax({imageSrc: 'src/components/img/mtmfb.jpg'});
+	$('.parallax-window').parallax({imageSrc: 'static/img/mtmfb.jpg'});
 });
 
 $(document).ready(function(){
-	$('.parallax-window_au').parallax({imageSrc: 'src/components/img/kpi-future.jpg'});
+	$('.parallax-window_au').parallax({imageSrc: 'static/img/kpi-future.jpg'});
 });
 
 $(document).ready(function(){
-	$('.parallax-window_ab').parallax({imageSrc: 'src/components/img/ping_img.jpg'});
+	$('.parallax-window_ab').parallax({imageSrc: 'static/img/ping_img.jpg'});
 });
 
 $(document).ready(function(){
-	$('.parallax-window_f').parallax({imageSrc: 'src/components/img/mtmfb.jpg'});
+	$('.parallax-window_f').parallax({imageSrc: 'static/img/mtmfb.jpg'});
 });
 
 $(document).ready(function(){
-	$('.parallax-window_donate').parallax({imageSrc: 'src/components/img/ws_Cubes_1920x1080.jpg'});
+	$('.parallax-window_donate').parallax({imageSrc: 'static/img/ws_Cubes_1920x1080.jpg'});
 });
 
 $('.contacts').click( function(){
