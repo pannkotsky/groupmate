@@ -1,7 +1,7 @@
-from rest_framework import viewsets
+from rest_framework import mixins, permissions, viewsets
 
 from common.pagination import CustomCursorPagination
-from .models import Topic, Post
+from .models import Topic, Post, TeacherPost
 from .serializers import TopicSerializer, PostSerializer
 
 
@@ -16,3 +16,9 @@ class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.order_by('-created')
     filter_fields = ('author', 'topic')
     pagination_class = CustomCursorPagination
+
+
+class TeacherPostViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
+    serializer_class = PostSerializer
+    queryset = TeacherPost.objects.all()
+    permission_classes = [permissions.AllowAny]

@@ -48,3 +48,8 @@ class Post(TimeStampedModel):
             self.author,
             text
         )
+
+
+class TeacherPost(Post):
+    class Meta:
+        proxy = True
