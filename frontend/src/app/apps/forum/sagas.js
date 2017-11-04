@@ -1,5 +1,5 @@
 import "regenerator-runtime/runtime";
-import { call, put, takeLatest } from "redux-saga/effects";
+import { call, put, takeLatest, select } from "redux-saga/effects";
 
 import * as constants from "./constants";
 import * as rest from "app/utils/rest";
@@ -25,7 +25,11 @@ function *fetchTopicDetails(action) {
 
 function *fetchPosts(action) {
     try {
-        const posts = yield call(rest.get, "posts/", {topic: action.payload.topicId});
+        let url = yield select((state) => state.getIn(["forum", "posts", "data", "next"]));
+        if (!url) {
+            url = `posts/?topic=${action.payload.topicId}`;
+        }
+        const posts = yield call(rest.get, url);
         yield put({type: constants.POSTS_RETRIEVE_SUCCESS, payload: posts});
     } catch (e) {
         yield put({type: constants.POSTS_RETRIEVE_ERROR, error: e.message});

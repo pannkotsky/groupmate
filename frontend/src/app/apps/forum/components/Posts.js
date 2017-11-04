@@ -2,16 +2,34 @@ import React, {Component} from "react";
 import {connect} from "react-redux";
 import pluralize from "pluralize";
 import moment from "moment";
+import autoBind from "react-autobind";
 
-import {retrieveTopicDetails, retrievePosts, addPost} from "../actions";
+import {retrieveTopicDetails, retrievePosts, addPost, resetPosts, resetTopicDetails} from "../actions";
 import Form from "app/components/Form";
 
 
 class Posts extends Component {
+    constructor(props) {
+        super(props);
+        autoBind(this);
+    }
+
     componentWillMount() {
-        const topicId = this.props.params.topicId;
-        this.props.retrieveTopicDetails(topicId);
-        this.props.retrievePosts(topicId);
+        this.props.retrieveTopicDetails(this.props.params.topicId);
+        this.retrievePosts();
+    }
+
+    componentWillUnmount() {
+        this.props.resetPosts();
+        this.props.resetTopicDetails();
+    }
+
+    retrievePosts() {
+        this.props.retrievePosts(this.props.params.topicId);
+    }
+
+    addPost(text) {
+        this.props.addPost(window.django.user.id, this.props.params.topicId, text);
     }
 
     render() {
@@ -30,28 +48,31 @@ class Posts extends Component {
 
                 <div className="posts--form">
                     <Form
-                        submit={(text) => this.props.addPost(window.django.user.id, this.props.params.topicId, text)}
+                        submit={this.addPost}
                         placeholder={"Add your post here..."}
                         buttonText={"Submit"}
                     />
                 </div>
 
-                {this.props.posts.pending ?
-                    <span>Loading...</span> :
-                    <ul className="section-list posts--list">
-                        {postsData.results.map((post) => {
-                            return (
-                                <li key={post.id} className="posts--list--item">
-                                    <div className="posts--list--item--text">{post.text}</div>
-                                    <div className="section-list--item--post-info">
-                                        <div>{moment(post.created).format("D MMM YYYY HH:mm")}</div>
-                                        {post.author_info ? <div>{post.author_info.get_full_name}</div> : null}
-                                    </div>
-                                </li>
-                            );
-                        })}
-                    </ul>
-                }
+                <ul className="section-list posts--list">
+                    {postsData.results.map((post) => {
+                        return (
+                            <li key={post.id} className="posts--list--item">
+                                <div className="posts--list--item--text">{post.text}</div>
+                                <div className="section-list--item--post-info">
+                                    <div>{moment(post.created).format("D MMM YYYY HH:mm")}</div>
+                                    {post.author_info ? <div>{post.author_info.get_full_name}</div> : null}
+                                </div>
+                            </li>
+                        );
+                    })}
+                    {this.props.posts.pending && <span>Loading...</span>}
+                    {postsData.next && !this.props.posts.pending ?
+                        <div className="section--load-more" onClick={this.retrievePosts}>
+                            Load more...
+                        </div> :
+                        null}
+                </ul>
             </div>
         );
     }
@@ -66,4 +87,10 @@ function mapStateToProps(state) {
 }
 
 
-export default connect(mapStateToProps, {retrieveTopicDetails, retrievePosts, addPost})(Posts);
+export default connect(mapStateToProps, {
+    retrieveTopicDetails,
+    retrievePosts,
+    addPost,
+    resetPosts,
+    resetTopicDetails
+})(Posts);

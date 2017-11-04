@@ -4,13 +4,17 @@ import pluralize from "pluralize";
 import {Link} from "react-router";
 import moment from "moment";
 
-import {retrieveTopics} from "../actions";
+import {retrieveTopics, resetTopics} from "../actions";
 import {urls} from "app/routes";
 
 
 class Topics extends Component {
     componentWillMount() {
         this.props.retrieveTopics();
+    }
+
+    componentWillUnmount() {
+        this.props.resetTopics();
     }
 
     render() {
@@ -68,4 +72,4 @@ function mapStateToProps(state) {
 }
 
 
-export default connect(mapStateToProps, {retrieveTopics})(Topics);
+export default connect(mapStateToProps, {retrieveTopics, resetTopics})(Topics);
