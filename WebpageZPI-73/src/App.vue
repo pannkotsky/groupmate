@@ -9,6 +9,7 @@
     <transition name="fade">
     <nav class="animated bounceInRight hide_nav_bar" v-if="show">
         <a v-for="hnav in hnavs" :key="hnav.title" :href="`#${hnav.id}`" v-smooth-scroll>{{ hnav.title }}</a>
+        <a href="/app/">Вхід для студентів</a>
         <button class="nav_btn" @click="show = !show">=</button>
     </nav>
     </transition>
