@@ -366,11 +366,14 @@ header:before {
   // START section about styles
   #about_us {
     height: 100vh;
-    overflow: hidden;
+    overflow-x: scroll;
   }
   #about_us p{
     font-family: $mainfont;
     font-size: 2rem;
+  }
+
+  #text_about {
     padding: 15rem 0 0 0;
   }
   // END section about styles
@@ -805,7 +808,6 @@ header:before {
 @media (max-width: 768px ){
   #about_us {
     height: 100vh;
-    overflow: hidden;
   }
   #about_us::before {
     content: '';
@@ -818,7 +820,6 @@ header:before {
   #about_us p{
     font-family: $mainfont;
     font-size: 2rem;
-    padding: 15rem 0 0 0;
     z-index: 15;
     color: white;
     position: relative;
@@ -912,8 +913,10 @@ header:before {
   #about_us p{
     font-family: $mainfont;
     font-size: 1.6rem;
-    padding: 10rem 0 0 0;
     text-shadow: 1px 1px 1px white;
+  }
+  #text_about {
+    padding: 10rem 0 0 0;
   }
   .hide_nav_bar {
     position: fixed;

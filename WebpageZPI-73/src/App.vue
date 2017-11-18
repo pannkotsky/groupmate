@@ -36,10 +36,17 @@
           <div class="row">
             <div class="col-sm-4"></div>
             <div class="col-sm-4"></div>
-            <div class="col-sm-4"><p class="" id="text_about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea excepturi eos ratione officia ut reiciendis eius enim molestias et distinctio, nam fugiat soluta, neque exercitationem, modi voluptates animi magnam maiores.
-            Exercitationem quasi veniam, fugiat ea quidem voluptatum alias cumque consectetur totam doloremque, magni iste earum quam ullam et cum temporibus deleniti adipisci, illo ipsam doloribus incidunt unde. Voluptatum, perferendis cum!
-            Omnis nostrum vero quis cupiditate porro excepturi optio amet? Corporis voluptatum neque facilis suscipit blanditiis veniam. Nam, ipsum, iusto praesentium, cupiditate incidunt tempora velit porro provident ut modi harum ducimus.
-         aliquam maxime ea debitis iure consectetur dolores dignissimos nulla enim quisquam officia molestiae vero numquam iusto facere explicabo velit? Quis.</p></div>
+            <div class="col-sm-4">
+              <div class="" id="text_about">
+                <p>Про нас</p>
+                <p>Ми – група однодумців, головною метою об’єднання яких є отримання сучасної та якісної освіти у сфері програмування та IT – технологій в одному з найповажніших вишів України – Національному технічному університеті України «Київський політехнічний інститут імені Ігоря. Сікорського». Всі ми люди різного віку, різноманітних професій, поглядів та міркувань, які вже мають вищу освіту, але об’єднані наразі спільними освітянськими цілями та завданнями на найближче майбутнє, а саме:</p>
+                <p>- ознайомитися з усіма найважливішими теоретичними надбаннями інженерів – програмістів та вчених у сферах практичного використання електронно – обчислювальної техніки та автоматизованої обробки інформації;</p>
+                <p>- оволодіти глибокими та новітніми знаннями у сфері створення програмного забезпечення, опанувати як сталі класичні, так і нові і сучасні технології в програмуванні;</p>
+                <p>- стати професійними розробниками, освіченими спеціалістами в своїй галузі, які можуть своєю працею приносити користь суспільству та забезпечувати достойний та стабільний достаток своїм родинам;</p>
+                <p>- опанувати програмну інженерію як технічну науку, головним покликанням якої є вирішення питань з якісної обробки та корисного використання інформації, проведення складних обчислень, вирішення інших технічних завдань з метою створення сприятливих умов для подальшого технічного прогресу та розвитку людства.</p>
+                <p>Ми об’єднали свої зусилля як одногрупники групи ЗПІ-зп73 НМК «ІПО» кафедри АПЕПС (факультет ТЕФ) задля досягнення поставлених цілей та реалізації освітніх завдань, що виникають перед нами в процесі опанування нової спеціальності</p>
+              </div>
+            </div>
           </div>
         </div>
         <a href="#contacts"><div class="to_down_contacts">
